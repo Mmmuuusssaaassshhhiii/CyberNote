@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CyberNote")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e4a0b86d98ebe96530d555a044a97909405d9aa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c8cc86f8e3dfbe86c9802993d9f3aa468910ab1")]
 [assembly: System.Reflection.AssemblyProductAttribute("CyberNote")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CyberNote")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
