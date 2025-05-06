@@ -1,15 +1,21 @@
-using CyberNote.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using CyberNote.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Добавляем сервисы в контейнер
+// Добавляем контекст базы данных и Identity
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseMySql(
         builder.Configuration.GetConnectionString("DefaultConnection"),
         new MySqlServerVersion(new Version(8, 0, 34))
     )
 );
+
+// Настроим Identity
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
 
 builder.Services.AddControllersWithViews();
 
@@ -25,6 +31,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseRouting();
 
+app.UseAuthentication(); // Обязательно добавь эту строку для аутентификации
 app.UseAuthorization();
 
 app.MapStaticAssets();
